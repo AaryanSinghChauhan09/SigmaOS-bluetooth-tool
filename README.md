@@ -1,15 +1,44 @@
-# SigmaOS-bluetooth-tool
+    # SigmaOS-bluetooth-tool
 
-Part of the SigmaOS multi-repository architecture.
+    Bluetooth pairing CLI/GUI (blueberry/blueferry)
 
-## Principles
-- MODULARITY: Single responsibility per repository
-- LOOSE COUPLING: Minimal dependencies between repos
-- INTERFACE SEGREGATION: Clear, focused public APIs
-- DETERMINISTIC TESTING: Comprehensive test coverage
+    Part of the **SigmaOS** sovereign operating-system ecosystem — a multi-repository
+    distribution modelled on Linux Mint and Omarchy Linux. See the parent
+    [`SigmaOS`](https://github.com/AaryanSinghChauhan09/SigmaOS) repository for the
+    full component index.
 
-## License
-SPDX-License-Identifier: GPL-3.0-or-later
+    ## Upstream inspirations
+    - https://github.com/linuxmint/blueberry
+- https://github.com/erikkb/blueferry
 
-## Copyright
-Copyright (C) 2026 SigmaOS Project
+    ## Design principles applied
+    - **Plan Before Act**
+- **Separation of Concerns**
+- **Defensive Programming**
+- **Fail-Fast**
+- **KISS**
+- **DRY**
+
+    ## Usage
+    Verbs: `scan-plan, devices, pair-plan, connect-plan`
+
+    ```
+    $ sigma-bluetooth scan-plan scan.txt --adapter hci0
+adapter hci0: 3 device(s)
+  select hci0
+  scan on
+$ sigma-bluetooth devices scan.txt
+4C:87:5D:1A:2B:3C  Sony WH-1000XM4  rssi=-62
+$ sigma-bluetooth pair-plan scan.txt 4C:87:5D:1A:2B:3C --pin 1234
+$ sigma-bluetooth connect-plan scan.txt 4C:87:5D:1A:2B:3C --paired 4C:87:5D:1A:2B:3C
+
+    ```
+
+    ## Build & test
+    ```
+    make build
+    make test
+    ```
+
+    ## Licence
+    GNU General Public License v3.0 (FOSS).
