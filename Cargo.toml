@@ -1,0 +1,9 @@
+[package]
+name = "sigmaos_bluetooth_tool"
+version = "0.1.0"
+edition = "2021"
+description = "Bluetooth device pairing wizard, tray applet, and BlueZ adapter management daemon"
+
+[lib]
+name = "sigmaos_bluetooth_tool"
+path = "src/lib.rs"
