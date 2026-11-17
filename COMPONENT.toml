@@ -3,12 +3,12 @@ name = "SigmaOS-bluetooth-tool"
 tier = 3
 stability = "scaffold"
 language = "rust"
-description = "Bluetooth device pairing wizard, tray applet, and BlueZ adapter management daemon"
+description = "Bluetooth pairing CLI/GUI (blueberry/blueferry)"
 upstream = ["https://github.com/linuxmint/blueberry"]
 
 [contract]
 provides = ["bluetooth-manager", "pairing-wizard", "bluetooth-tray-applet"]
-depends_on = []
+depends_on = ["SigmaOS-system"]
 
 [maturity]
 status = "Scaffold"
